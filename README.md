@@ -75,15 +75,15 @@ As a bonus feature, OpinioNest includes a loading indicator during searches, ens
 
 ## Installation
 
-1. Clone the repo ```bash  https://github.com/mansi10101/OpinioNest.git ``` 
+1. Clone the repo ``` git clone https://github.com/mansi10101/OpinioNest.git ``` 
 2. Open root of the project in editor.
-3. Route to client directory ```bash cd client ```
+3. Route to client directory ``` cd client ```
    ```bash 
     npm install
     npm start 
    ```
 4. Open another command prompt.
-5. Route server to the backend directory ```bash cd server ```
+5. Route server to the backend directory ``` cd server ```
      ```bash 
     npm install
     npm start 
