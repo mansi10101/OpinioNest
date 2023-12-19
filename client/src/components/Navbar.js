@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../stylesheets/Navbar.module.css";
-import { Button, useMediaQuery } from "@mui/material";
+import { Button, Typography, useMediaQuery } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { gapi } from "gapi-script";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,8 @@ const noimage = require("../assets/download.jpeg");
 const Navbar = ({ user, authenticated, setUser }) => {
   const isMobile = useMediaQuery("(max-width:400px)");
   const navigate = useNavigate();
+
+  const username = user.name?.split(" ")[0];
 
   const signOut = () => {
     const auth2 = gapi.auth2.getAuthInstance();
@@ -29,6 +31,11 @@ const Navbar = ({ user, authenticated, setUser }) => {
 
       {authenticated && (
         <div style={{ display: "flex", gap: "1rem" }}>
+          <Typography
+            style={{ alignSelf: "center", color: "white", fontSize: "1.2rem" }}
+          >
+            Hii {username} !{" "}
+          </Typography>
           <div className={styles.img_container}>
             <img
               src={user.image ? user.image : noimage}
@@ -36,12 +43,6 @@ const Navbar = ({ user, authenticated, setUser }) => {
               className={styles.img}
             />
           </div>
-          {/* <Typography
-            style={{ alignSelf: "center", color: "white", fontSize: "1.2rem" }}
-          >
-            Hii {user.name.split(" ")[0]} !{" "}
-          </Typography> */}
-
           <Button
             startIcon={!isMobile && <LogoutIcon fontSize="small" />}
             variant="outlined"

@@ -26,8 +26,6 @@ function App() {
     setOpencreatepost(false);
   };
 
-  console.log(user);
-  console.log(authenticated);
   return (
     <div className={styles.app}>
       <Navbar user={user} setUser={setUser} authenticated={authenticated} />

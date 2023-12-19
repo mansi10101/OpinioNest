@@ -44,7 +44,6 @@ const RegisterForm = ({ setUser }) => {
           name: json.name,
           userId: json._id,
           isLoggedIn: true,
-          token: json._id,
         });
         navigate("/");
       }

@@ -22,7 +22,6 @@ const registerUser = async (req, res) => {
 
 const authenticateUser = async (req, res) => {
   const { email, password } = req.body;
-  console.log(email, password);
   const userExist = await UserModel.findOne({ email: email });
   if (!userExist) {
     return res.status(403).json({

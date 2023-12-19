@@ -54,8 +54,8 @@ const Home = ({
         console.error("Unable to get comments for a post.", error)
       );
   };
-  console.log("home auth", authenticated);
-  if (!authenticated) {
+
+  if (!authenticated && !user.isLoggedIn) {
     return <Navigate replace to="/login" />;
   } else {
     return (
