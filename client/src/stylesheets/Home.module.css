@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500&family=Farsan&family=Inter&family=Roboto+Condensed&display=swap");
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: fixed;
+}
+
+.pages {
+  flex-grow: 1;
+  overflow: auto;
+  min-height: 2em;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+}
+
+.home_container {
+  /* width: 100%; */
+  /* width: 1100px; */
+  /* display: grid; */
+  gap: 1rem;
+  /* margin: 10px; */
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.posts_container {
+  max-width: 1100px;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.search_container {
+  max-width: 600px;
+  padding: 0 10px;
+}
+
+.postcards {
+  display: inline-grid;
+  gap: 10px;
+  width: 700px;
+}
+
+.modal {
+  transform: scaleY(1) scaleX(0);
+  animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards,
+    unfoldOut 5s 0.1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.img {
+  width: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.img_container {
+  height: fit-content;
+}
+
+.title {
+  font-size: 1rem !important;
+  font-weight: 500;
+}
+
+.input {
+  padding: 10px 5px;
+  width: 100%;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.commentsection {
+  height: 280px;
+  overflow-y: scroll;
+}
+
+.commentsection::-webkit-scrollbar {
+  width: 5px;
+}
+
+@media screen and (width <=500px) {
+  .home_container {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+}

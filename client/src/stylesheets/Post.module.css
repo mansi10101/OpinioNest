@@ -1,0 +1,102 @@
+.post_container {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    justify-content: center;
+    height: fit-content;
+    gap: 1rem;
+    width: inherit;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.details_container {
+    width: 100%;
+    height: fit-content;
+}
+
+.img_container {
+    height: fit-content;
+}
+
+.img {
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+
+.date {
+    font-size: 0.8rem !important;
+}
+
+.post {
+    background-color: white;
+    padding: 7px 0;
+    border-radius: 10px;
+}
+
+.descrips {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    padding-left: 0;
+}
+
+.product_warranty {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.product_details {
+    text-align: center;
+}
+
+.product_details p {
+    font-size: 0.8rem;
+    margin: 2px;
+}
+
+
+@media screen and (width <=650px) {
+    .post_container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .img {
+        width: 30px
+    }
+
+    .descrips {
+        padding-top: 5px;
+    }
+
+    .name,
+    .post_text {
+        font-size: 0.9rem !important;
+    }
+
+    .product_details p {
+        display: none;
+    }
+}
+
+@media screen and (width<=420px) {
+    .descrips {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .date {
+        font-size: 0.7rem !important;
+    }
+
+    .post_container {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}

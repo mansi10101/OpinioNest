@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500&family=Farsan&family=Roboto+Condensed&display=swap");
+
+.container {
+  /* width: 100%; */
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3b4465;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: "Roboto Condensed" !important;
+  margin: 0;
+  font-size: 1.5rem !important;
+  color: white;
+}
+
+.img_container {
+  height: fit-content;
+}
+
+.img {
+  width: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+@media screen and (width <=500px) {
+  .container {
+    padding: 15px 10px;
+  }
+
+  .title {
+    font-size: 1.2rem !important;
+  }
+
+  .img {
+    width: 30px;
+  }
+}

@@ -1,0 +1,47 @@
+.form_container {
+    background-color: white;
+    height: fit-content;
+    padding: 10px;
+    max-width: 350px;
+    border-radius: 10px;
+    margin-top: 10px;
+    /* border: 2px solid black; */
+}
+
+.heading1 {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    font-family: Georgia serif !important;
+    margin: 6px 0;
+}
+
+.heading2 {
+    font-size: 1.3rem !important;
+    font-weight: 550 !important;
+    font-family: serif !important;
+}
+
+
+.btn_cont {
+    margin-top: 10px !important;
+    display: flex;
+    justify-content: right;
+}
+
+.error {
+    padding: 10px;
+    background: #ffefef;
+    color: var(--error);
+    margin: 20px 0;
+}
+
+
+@media screen and (width<=850px) {
+    .heading1 {
+        font-size: 1.5rem !important;
+    }
+
+    .heading2 {
+        font-size: 1.1rem !important;
+    }
+}
