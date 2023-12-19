@@ -58,12 +58,6 @@ As a bonus feature, OpinioNest includes a loading indicator during searches, ens
  - [Bcrypt](https://medium.com/@mridu.sh92/a-quick-guide-for-authentication-using-bcrypt-on-express-nodejs-1d8791bb418f) : default password hash algorithm for OpenBSD.
 
 
-
-## Lessons Learned
-
-What did you learn while building this project? What challenges did you face and how did you overcome them?
-
-
 ## Backend APIs
 
 |    API    |  Method  |   Parameters/Body    |      Purpose      |
