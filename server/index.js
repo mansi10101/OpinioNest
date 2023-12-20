@@ -25,7 +25,9 @@ app.use((req, res, next) => {
 });
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(
+    "mongodb+srv://mansinagaria:post123@cluster0.v4gc0dm.mongodb.net/?retryWrites=true&w=majority"
+  )
   // .then(() => {
   //   //listen for requests
   //   app.listen(process.env.PORT, () => {
