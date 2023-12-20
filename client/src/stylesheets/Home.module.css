@@ -11,7 +11,7 @@
 
 .pages {
   flex-grow: 1;
-  overflow-y: auto;
+  overflow: auto;
   min-height: 2em;
 }
 
@@ -109,5 +109,8 @@ input:focus {
   .home_container {
     margin-left: 2px;
     margin-right: 2px;
+  }
+  .pages {
+    overflow-y: auto;
   }
 }
