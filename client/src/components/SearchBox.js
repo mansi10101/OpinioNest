@@ -14,7 +14,9 @@ const SearchBox = ({ searchText, setSearchText, setloading }) => {
     e.preventDefault();
     setloading(true);
     const text = searchText;
-    await fetch(`/api/posts/searchpost/${text}`)
+    await fetch(
+      `https://opinio-nest-server.vercel.app/api/posts/searchpost/${text}`
+    )
       .then(async (response) => {
         const parseddata = await response.json();
         dispatch({ type: "SET_POSTS", payload: parseddata });
@@ -27,7 +29,7 @@ const SearchBox = ({ searchText, setSearchText, setloading }) => {
   const closeSearch = async () => {
     setSearchText("");
     setloading(true);
-    await fetch("/api/posts")
+    await fetch("https://opinio-nest-server.vercel.app/api/posts")
       .then(async (response) => {
         const parseddata = await response.json();
         dispatch({ type: "SET_POSTS", payload: parseddata });

@@ -29,7 +29,7 @@ const Home = ({
   useEffect(() => {
     const getPosts = async () => {
       setloading(true);
-      await fetch("/api/posts")
+      await fetch("https://opinio-nest-server.vercel.app/api/posts")
         .then(async (response) => {
           const parseddata = await response.json();
           dispatch({ type: "SET_POSTS", payload: parseddata });
@@ -44,7 +44,9 @@ const Home = ({
     setOpenCommentBox(true);
     setPostId(id);
     setCommentloader(true);
-    await fetch(`/api/posts/${id}/comments`)
+    await fetch(
+      `https://opinio-nest-server.vercel.app/api/posts/${id}/comments`
+    )
       .then(async (response) => {
         const parseddata = await response.json();
         dispatch({ type: "SET_COMMENTS", payload: parseddata });

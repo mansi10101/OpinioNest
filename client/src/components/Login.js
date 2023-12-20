@@ -19,13 +19,16 @@ const Login = ({ setUser }) => {
     try {
       const login = { email, name, image: profileImg };
 
-      const response = await fetch("/api/posts/google-login", {
-        method: "POST",
-        body: JSON.stringify(login),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://opinio-nest-server.vercel.app/api/posts/google-login",
+        {
+          method: "POST",
+          body: JSON.stringify(login),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       const json = await response.json();
       if (!response.ok) {
