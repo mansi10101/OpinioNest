@@ -25,7 +25,7 @@ const Navbar = ({ user, authenticated, setUser }) => {
       console.log("User signed out.");
       setTimeout(() => {
         setlogoutAlert(false);
-      }, 3000);
+      }, 2500);
     });
   };
 
@@ -42,7 +42,7 @@ const Navbar = ({ user, authenticated, setUser }) => {
               style={{
                 alignSelf: "center",
                 color: "white",
-                fontSize: "1.2rem",
+                fontSize: isMobile ? "13px" : "1.2rem",
               }}
             >
               Hii {username} !{" "}
@@ -55,7 +55,11 @@ const Navbar = ({ user, authenticated, setUser }) => {
               />
             </div>
             {isMobile ? (
-              <LogoutIcon fontSize="small" margin="0" onClick={signOut} />
+              <LogoutIcon
+                style={{ margin: "0", alignSelf: "center", color: "white" }}
+                fontSize="small"
+                onClick={signOut}
+              />
             ) : (
               <Button
                 startIcon={<LogoutIcon fontSize="small" />}
