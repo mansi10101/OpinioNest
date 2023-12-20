@@ -17,16 +17,13 @@ const CreatePostform = ({ user, setOpen }) => {
 
     const post = { text, userId: user.userId };
 
-    const response = await fetch(
-      "https://opinio-nest-server.vercel.app/api/posts",
-      {
-        method: "POST",
-        body: JSON.stringify(post),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch("/api/posts", {
+      method: "POST",
+      body: JSON.stringify(post),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     const json = await response.json();
     if (!response.ok) {
@@ -78,7 +75,6 @@ const CreatePostform = ({ user, setOpen }) => {
             },
             resize: "vertical",
             fontSize: "0.8rem !important",
-      
           }}
           multiline
           name="description"

@@ -9,13 +9,13 @@ const app = express();
 
 //middleware
 
-app.use(
-  cors({
-    origin: ["https://opinio-nest-client.vercel.app"],
-    method: ["POST", "GET"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["https://opinio-nest-client.vercel.app"],
+//     method: ["POST", "GET"],
+//     credentials: true,
+//   })
+// );
 
 app.use(express.json()); //necessary for post and patch where we are requesting data
 app.use(bodyParser.json());
@@ -24,21 +24,21 @@ app.use((req, res, next) => {
   next();
 });
 
+//routes
+app.use("/api/posts", postRoutes);
+
 mongoose
   .connect(
     "mongodb+srv://mansinagaria:post123@cluster0.v4gc0dm.mongodb.net/?retryWrites=true&w=majority"
   )
-  // .then(() => {
-  //   //listen for requests
-  //   app.listen(process.env.PORT, () => {
-  //     console.log(`Connected to db & Listening at port ${process.env.PORT}...`);
-  //   });
-  // })
+  .then(() => {
+    //listen for requests
+    app.listen(process.env.PORT, () => {
+      console.log(`Connected to db & Listening at port ${process.env.PORT}...`);
+    });
+  })
   .catch((error) => {
     console.log(error);
   });
-
-//routes
-app.use("/api/posts", postRoutes);
 
 //connect to database
