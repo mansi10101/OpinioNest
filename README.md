@@ -84,9 +84,9 @@ As a bonus feature, OpinioNest includes a loading indicator during searches, ens
 | `/` | `POST` | {userId:ObjectId, text: String}|for posting post data with user's Object id|
 | `/` | `GET` | | getting all posts |
 | `/:id/comment` | `POST` | {userId: String, text:"string"| post comment on a post|
-| `GET` | `/:id/comments` | |   get all comments of a post|      
-| `GET` | `/searchpost/:text` | | getting searched posts|
-| `GET` | `/searchcomment/:postId/:text` | |   get all comments for searched comment|
+| `/:id/comments`  | `GET` | |   get all comments of a post|      
+|  `/searchpost/:text`  | `GET` | | getting searched posts|
+|`/searchcomment/:postId/:text`   | `GET`| |   get all comments for searched comment|
 
 
 ## **Installation**
