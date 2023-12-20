@@ -3,7 +3,7 @@ import Modal from "@mui/material/Modal";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import CreatePostform from "./CreatePostform";
 
-const CreatePostModal = ({ handleclose, opencreatepost, user, setOpen }) => {
+const CreatePostModal = ({ handleclose, opencreatepost, setOpen, user }) => {
   const isMobile = useMediaQuery("(max-width:350px)");
 
   return (

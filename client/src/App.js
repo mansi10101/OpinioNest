@@ -15,6 +15,7 @@ function App() {
   const [loading, setloading] = useState(true);
   const [authenticated, setauthenticated] = useState(false);
   const [opencreatepost, setOpencreatepost] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const isMobile = useMediaQuery("(max-width:700px)");
 
@@ -43,6 +44,8 @@ function App() {
                 authenticated={authenticated}
                 searchText={searchText}
                 setSearchText={setSearchText}
+                open={open}
+                setOpen={setOpen}
               />
             }
           />
@@ -56,6 +59,8 @@ function App() {
       <CreatePostModal
         opencreatepost={opencreatepost}
         handleclose={handleclose}
+        user={user}
+        setOpen={setOpen}
       />
     </div>
   );

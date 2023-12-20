@@ -63,7 +63,7 @@ const CommentForm = ({
       setText("");
       setTimeout(() => {
         setOpen(false);
-      }, 1000);
+      }, 5000);
     }
   };
 

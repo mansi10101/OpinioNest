@@ -44,7 +44,7 @@ const Navbar = ({ user, authenticated, setUser }) => {
             />
           </div>
           <Button
-            startIcon={!isMobile && <LogoutIcon fontSize="small" />}
+            startIcon={<LogoutIcon fontSize="small" />}
             variant="outlined"
             onClick={signOut}
             type="submit"
@@ -52,7 +52,7 @@ const Navbar = ({ user, authenticated, setUser }) => {
               color: "white",
               fontSize: isMobile ? "0.7rem" : "0.8rem",
               textTransform: "capitalize",
-              borderColor: "white",
+              borderColor: !isMobile && "white",
               padding: isMobile ? " 0 0.2rem" : "0 1.5rem",
               "&:hover": {
                 border: "1px solid #686868",
@@ -61,7 +61,7 @@ const Navbar = ({ user, authenticated, setUser }) => {
               },
             }}
           >
-            Logout
+            {!isMobile && "Logout"}
           </Button>
         </div>
       )}

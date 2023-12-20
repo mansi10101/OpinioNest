@@ -18,9 +18,10 @@ const Home = ({
   authenticated,
   searchText,
   setSearchText,
+  open,
+  setOpen,
 }) => {
   const { posts, dispatch } = usePostContext();
-  const [open, setOpen] = useState(false);
   const [openCommentBox, setOpenCommentBox] = useState(false);
   const [postid, setPostId] = useState(null);
   const [commentloader, setCommentloader] = useState(false);
@@ -44,7 +45,9 @@ const Home = ({
     setOpenCommentBox(true);
     setPostId(id);
     setCommentloader(true);
-    await fetch(`https://opinio-nest-server.vercel.app/api/posts/${id}/comments`)
+    await fetch(
+      `https://opinio-nest-server.vercel.app/api/posts/${id}/comments`
+    )
       .then(async (response) => {
         const parseddata = await response.json();
         dispatch({ type: "SET_COMMENTS", payload: parseddata });

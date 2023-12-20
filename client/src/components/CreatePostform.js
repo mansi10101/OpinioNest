@@ -40,7 +40,7 @@ const CreatePostform = ({ user, setOpen }) => {
       dispatch({ type: "CREATE_POST", payload: json });
       setTimeout(() => {
         setOpen(false);
-      }, 2000);
+      }, 5000);
     }
   };
   return (
