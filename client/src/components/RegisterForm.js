@@ -35,6 +35,7 @@ const RegisterForm = ({ setUser }) => {
           body: JSON.stringify(user),
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
           },
         }
       );
@@ -70,6 +71,7 @@ const RegisterForm = ({ setUser }) => {
           body: JSON.stringify(user),
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
           },
         }
       );

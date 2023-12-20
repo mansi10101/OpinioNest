@@ -26,6 +26,7 @@ const Login = ({ setUser }) => {
           body: JSON.stringify(login),
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
           },
         }
       );

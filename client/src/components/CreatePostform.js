@@ -24,6 +24,7 @@ const CreatePostform = ({ user, setOpen }) => {
         body: JSON.stringify(post),
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
       }
     );

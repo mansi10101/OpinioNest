@@ -10,7 +10,8 @@ const getAllPosts = async (req, res) => {
         path: "user",
         select: "name image",
       });
-    if (req.method === "OPTIONS") return res.status(200).json(posts);
+
+    res.status(200).json(posts);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -21,7 +22,7 @@ const createPost = async (req, res) => {
     const { text, userId } = req.body;
     let post = await postModel.create({ text, user: userId });
     post = await post.populate("user");
-    if (req.method === "OPTIONS") return res.status(200).json(post);
+    res.status(200).json(post);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -33,7 +34,8 @@ const searchPost = async (req, res) => {
     let post = await postModel
       .find({ $text: { $search: text } })
       .populate("user");
-    if (req.method === "OPTIONS") return res.status(200).json(post);
+
+    res.status(200).json(post);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

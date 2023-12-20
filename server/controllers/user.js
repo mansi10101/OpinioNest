@@ -17,7 +17,7 @@ const registerUser = async (req, res) => {
     password: hashedPassword,
     name,
   });
-  if (req.method === "OPTIONS") return res.status(200).json(user);
+  res.status(200).json(user);
 };
 
 const authenticateUser = async (req, res) => {
@@ -34,7 +34,7 @@ const authenticateUser = async (req, res) => {
   if (!samePassword) {
     return res.status(401).json({ error: "Incorrect username or password." });
   }
-  if (req.method === "OPTIONS") return res.status(200).json(userExist);
+  res.status(200).json(userExist);
 };
 
 const googleauth = async (req, res) => {
@@ -48,8 +48,7 @@ const googleauth = async (req, res) => {
       image,
       name,
     });
-
-    if (req.method === "OPTIONS") return res.status(200).json(user);
+    res.status(200).json(user);
   }
 };
 
