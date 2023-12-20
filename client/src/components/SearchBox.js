@@ -29,7 +29,7 @@ const SearchBox = ({ searchText, setSearchText, setloading }) => {
   const closeSearch = async () => {
     setSearchText("");
     setloading(true);
-    await fetch("ttps://opinio-nest-server.vercel.app/api/posts")
+    await fetch("https://opinio-nest-server.vercel.app/api/posts")
       .then(async (response) => {
         const parseddata = await response.json();
         dispatch({ type: "SET_POSTS", payload: parseddata });
