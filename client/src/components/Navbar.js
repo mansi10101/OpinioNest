@@ -4,6 +4,7 @@ import { Button, Typography, useMediaQuery } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { gapi } from "gapi-script";
 import { useNavigate } from "react-router-dom";
+import Alert from "./Alert";
 
 const noimage = require("../assets/download.jpeg");
 
