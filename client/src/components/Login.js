@@ -42,7 +42,7 @@ const Login = ({ setUser }) => {
           token: currentUser.xc.access_token,
           isLoggedIn: true,
         });
-        navigate("https://opinio-nest-client.vercel.app");
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
