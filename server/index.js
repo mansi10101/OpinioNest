@@ -24,18 +24,19 @@ app.use((req, res, next) => {
   next();
 });
 
+mongoose
+  .connect(process.env.MONGO_URI)
+  // .then(() => {
+  //   //listen for requests
+  //   app.listen(process.env.PORT, () => {
+  //     console.log(`Connected to db & Listening at port ${process.env.PORT}...`);
+  //   });
+  // })
+  .catch((error) => {
+    console.log(error);
+  });
+
 //routes
 app.use("/api/posts", postRoutes);
 
 //connect to database
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
-    //listen for requests
-    app.listen(process.env.PORT, () => {
-      console.log(`Connected to db & Listening at port ${process.env.PORT}...`);
-    });
-  })
-  .catch((error) => {
-    console.log(error);
-  });
