@@ -28,13 +28,16 @@ const RegisterForm = ({ setUser }) => {
     try {
       const user = { email: loginemail, password: loginpassword };
 
-      const response = await fetch(`/api/posts/login`, {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `ttps://opinio-nest-server.vercel.app/api/posts/login`,
+        {
+          method: "POST",
+          body: JSON.stringify(user),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       const json = await response.json();
       if (!response.ok) {
@@ -60,13 +63,16 @@ const RegisterForm = ({ setUser }) => {
         name: signupname,
       };
 
-      const response = await fetch(`/api/posts/register`, {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `ttps://opinio-nest-server.vercel.app/api/posts/register`,
+        {
+          method: "POST",
+          body: JSON.stringify(user),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       const json = await response.json();
       if (!response.ok) {

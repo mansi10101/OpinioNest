@@ -41,13 +41,16 @@ const CommentForm = ({
 
     const comment = { text, userId: user.userId };
 
-    const response = await fetch(`/api/posts/${postid}/comment`, {
-      method: "POST",
-      body: JSON.stringify(comment),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `ttps://opinio-nest-server.vercel.app/api/posts/${postid}/comment`,
+      {
+        method: "POST",
+        body: JSON.stringify(comment),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const json = await response.json();
     if (!response.ok) {
