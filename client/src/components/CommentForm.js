@@ -42,7 +42,7 @@ const CommentForm = ({
     const comment = { text, userId: user.userId };
 
     const response = await fetch(
-      `ttps://opinio-nest-server.vercel.app/api/posts/${postid}/comment`,
+      `https://opinio-nest-server.vercel.app/api/posts/${postid}/comment`,
       {
         method: "POST",
         body: JSON.stringify(comment),
@@ -69,7 +69,9 @@ const CommentForm = ({
   const handleSearchcomment = async (e) => {
     e.preventDefault();
     setloading(true);
-    await fetch(`/api/posts/searchcomment/${postid}/${searchtext}`)
+    await fetch(
+      `https://opinio-nest-server.vercel.app/api/posts/searchcomment/${postid}/${searchtext}`
+    )
       .then(async (response) => {
         const parseddata = await response.json();
         dispatch({ type: "SET_COMMENTS", payload: parseddata });
@@ -82,7 +84,9 @@ const CommentForm = ({
     setloading(true);
     setOpenSearch(false);
     setSearchText("");
-    await fetch(`/api/posts/${postid}/comments`)
+    await fetch(
+      `https://opinio-nest-server.vercel.app/api/posts/${postid}/comments`
+    )
       .then(async (response) => {
         const parseddata = await response.json();
         dispatch({ type: "SET_COMMENTS", payload: parseddata });

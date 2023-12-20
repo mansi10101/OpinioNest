@@ -15,7 +15,7 @@ const SearchBox = ({ searchText, setSearchText, setloading }) => {
     setloading(true);
     const text = searchText;
     await fetch(
-      `ttps://opinio-nest-server.vercel.app/api/posts/searchpost/${text}`
+      `https://opinio-nest-server.vercel.app/api/posts/searchpost/${text}`
     )
       .then(async (response) => {
         const parseddata = await response.json();

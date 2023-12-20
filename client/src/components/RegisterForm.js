@@ -29,7 +29,7 @@ const RegisterForm = ({ setUser }) => {
       const user = { email: loginemail, password: loginpassword };
 
       const response = await fetch(
-        `ttps://opinio-nest-server.vercel.app/api/posts/login`,
+        `https://opinio-nest-server.vercel.app/api/posts/login`,
         {
           method: "POST",
           body: JSON.stringify(user),
@@ -64,7 +64,7 @@ const RegisterForm = ({ setUser }) => {
       };
 
       const response = await fetch(
-        `ttps://opinio-nest-server.vercel.app/api/posts/register`,
+        `https://opinio-nest-server.vercel.app/api/posts/register`,
         {
           method: "POST",
           body: JSON.stringify(user),

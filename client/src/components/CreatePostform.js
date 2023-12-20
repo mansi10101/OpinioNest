@@ -18,7 +18,7 @@ const CreatePostform = ({ user, setOpen }) => {
     const post = { text, userId: user.userId };
 
     const response = await fetch(
-      "ttps://opinio-nest-server.vercel.app/api/posts",
+      "https://opinio-nest-server.vercel.app/api/posts",
       {
         method: "POST",
         body: JSON.stringify(post),
