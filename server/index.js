@@ -9,13 +9,14 @@ const app = express();
 
 //middleware
 
-// app.use(
-//   cors({
-//     origin: ["https://opinio-nest-client.vercel.app"],
-//     method: ["POST", "GET"],
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: ["https://opinio-nest-client.vercel.app"],
+    method: ["POST", "GET"],
+    credentials: true,
+    
+  })
+);
 
 app.use(express.json()); //necessary for post and patch where we are requesting data
 app.use(bodyParser.json());

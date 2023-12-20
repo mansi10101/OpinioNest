@@ -18,7 +18,7 @@ const postComment = async (req, res) => {
 
     // res.status(200).json(updatedPost.comments[0]);
     postcomment = await postcomment.populate("user");
-    res.status(200).json(postcomment);
+    if (req.method === "OPTIONS") return res.status(200).json(postcomment);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -39,7 +39,7 @@ const getAllCommentsForPost = async (req, res) => {
     comments.sort((a, b) => b.createdAt - a.createdAt);
 
     // Return the comments
-    res.status(200).json(comments);
+    if (req.method === "OPTIONS") return res.status(200).json(comments);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -56,8 +56,7 @@ const searchComment = async (req, res) => {
         },
       })
       .populate("user");
-
-    res.status(200).json(comments);
+    if (req.method === "OPTIONS") return res.status(200).json(comments);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
