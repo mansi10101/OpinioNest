@@ -3,22 +3,22 @@ const express = require("express");
 const postRoutes = require("./routes/posts");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-// const cors = require("cors");
+const cors = require("cors");
 //express app
 const app = express();
 
 //middleware
 
-// app.use(
-//   cors({
-//     origin: ["https://opinio-nest-client.vercel.app"],
-//     method: ["POST", "GET"],
-//     credentials: true,
-
-//   })
-// );
+app.use(
+  cors({
+    origin: ["https://opinio-nest-client.vercel.app"],
+    method: ["POST", "GET", "OPTIONS", "PATCH", "DELETE", "PUT"],
+    credentials: true,
+  })
+);
 
 app.use(express.json()); //necessary for post and patch where we are requesting data
+
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   console.log(req.path, req.method);
